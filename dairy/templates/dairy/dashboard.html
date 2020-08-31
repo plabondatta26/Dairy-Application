@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table style="text-align:center; width:80%">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Creation Date</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for d in dairy %}
+        <tr>
+            <td>{{d.id}}</td>
+            <td>{{d.title}}</td>
+            <td>{{d.created_on}}</td>
+        </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
