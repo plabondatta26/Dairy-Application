@@ -7,4 +7,6 @@ urlpatterns = [
     path('dairy/',views.index, name='home'),
     path('dairy/add/',views.add, name='add_new'),
     path('dairy/dashboard/',views.dashboard, name='dashboard'),
+    path('dairy/delete/<int:id>/',views.delete, name='delete'),
+    path('dairy/edit/<int:id>/',views.edit, name='edit'),
 ]
