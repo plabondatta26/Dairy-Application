@@ -1,32 +1,45 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
 </head>
 <body>
-    <table style="text-align:center; width:80%">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Creation Date</th>
-            <th> Action </th>
-        </tr>
-        </thead>
-        <tbody>
-            {% for d in dairy %}
-                <tr>
-                    <th>{{d.id}}</th>
-                    <td>{{d.title}}</td>
-                    <td>{{d.created_on}}</td>
-                    <td>
-                        <a href="{%url 'edit' d.id%}">Edit</a>
-                        <a href="{%url 'delete' d.id%}">Delete</a>
-                    </td>
-                </tr>
-             {% endfor %}
-        </tbody>
-    </table>
+<div class="container">
+     <h4 class="text-center alert alert-danger"> Contents </h4><br>
+    <div class="row">
+        <div class="text-center">
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Creation Date</th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in dairy %}
+                        <tr>
+                            <th>{{d.id}}</th>
+                            <td>{{d.title}}</td>
+                            <td>{{d.created_on}}</td>
+                            <td>
+                                <a href="{%url 'edit' d.id%}" class="btn btn-success">Edit</a>
+                                <a href="{%url 'delete' d.id%} " class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                     {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <script src="{%static 'dairy/js/jquery.js' %}"></script>
+    <script src="{% static 'dairy/js/popper.js' %}"></script>
+    <script src="{% static 'dairy/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

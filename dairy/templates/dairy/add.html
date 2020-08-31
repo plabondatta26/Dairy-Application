@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
 </head>
 <body>
-    <div>
+    <h4 class="text-center alert alert-info"> Add a new Dairy</h4>
+    <div class="text-center">
         <form action="" method="post">
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="Add">
+            <input type="submit" value="Add Dairy" class="btn btn-success">
         </form>
 </div>
+
+    <script src="{%static 'dairy/js/jquery.js' %}"></script>
+    <script src="{% static 'dairy/js/popper.js' %}"></script>
+    <script src="{% static 'dairy/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
