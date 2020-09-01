@@ -4,10 +4,9 @@
     <list default="true" id="84bd4481-e476-4da2-b03e-2ecafc2026b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyDairy_with_login/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyDairy_with_login/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyDairy_with_login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyDairy_with_login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dairy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dairy/templates/dairy/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/templates/dairy/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dairy/templates/dairy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/templates/dairy/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -16,7 +16,7 @@ def add(requst):
             title=ad.cleaned_data['title']
             description=ad.cleaned_data['description']
             ad.save()
-            return render(requst, 'dairy/add.html', {'form':ad})
+            return HttpResponseRedirect('/dairy/dashboard/')
     ad=Add_Dairy()
     return render(requst, 'dairy/add.html', {'form': ad})
 
