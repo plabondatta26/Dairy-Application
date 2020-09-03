@@ -5,11 +5,48 @@
     <meta charset="UTF-8">
     <title>Dairy's</title>
     <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" >Dairy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'dashboard'%}">Dashboard</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'add_new'%}">Add New</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <h4 class="form-control my-sm-0">Username </h4>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+      <li class="nav-item">
+        <a class="alert alert-danger disabled" href="{%url 'logout'%}">Log Out</a>
+      </li>
+  </div>
+</nav>
+
+
 </head>
 <body>
+
+
  <div class="container text-center">
      <h4> This is a Dairy portal</h4>
-<a href="{% url 'add_new'%}" class="btn btn-info"> Create a dairy</a>
 
  </div>
     <script src="{%static 'dairy/js/jquery.js' %}"></script>
