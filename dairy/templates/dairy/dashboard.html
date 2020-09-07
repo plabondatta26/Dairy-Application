@@ -31,7 +31,10 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-        <h4 class="form-control my-sm-0">Username </h4>
+        {% if user.is_authenticated %}
+             <h4 class="form-control my-sm-0">{{user.username}}</h4>
+        {% endif %}
+
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
@@ -60,18 +63,19 @@
                         <th> Action </th>
                     </tr>
                 </thead>
+
+                {% for d in dairy %}
                 <tbody>
-                    {% for d in dairy %}
                         <tr>
                             <th>{{d.id}}</th>
                             <td>{{d.title}}</td>
                             <td>{{d.created_on}}</td>
                             <td>
-                                <a href="{%url 'edit' d.id%}" class="btn btn-success">Edit</a>
-                                <a href="{%url 'delete' d.id%} " class="btn btn-danger">Delete</a>
+                                <a href="{%url 'edit'%}" class="btn btn-success">Edit</a>
+                                <a href="{%url 'delete' %} " class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
-                     {% endfor %}
+                {% endfor %}
                 </tbody>
             </table>
         </div>

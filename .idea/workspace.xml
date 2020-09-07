@@ -3,14 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="84bd4481-e476-4da2-b03e-2ecafc2026b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyDairy_with_login/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyDairy_with_login/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyDairy_with_login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyDairy_with_login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/migrations/0002_auto_20200831_1232.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/migrations/0003_dairy_updated_on.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/migrations/0004_auto_20200831_1946.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/migrations/0005_auto_20200831_2321.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dairy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dairy/templates/dairy/Update.html" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/templates/dairy/Update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dairy/templates/dairy/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/templates/dairy/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dairy/templates/dairy/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/templates/dairy/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dairy/templates/dairy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/templates/dairy/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dairy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dairy/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +40,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Desktop/Dairy_with_login" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -73,7 +79,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="runserver" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />

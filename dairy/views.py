@@ -2,28 +2,30 @@ from django.shortcuts import render,HttpResponseRedirect, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import Add_Dairy
 from .models import Dairy
+from django.contrib.auth.models import User
 # Create your views here.
 
 
 def index(request):
-
     return render(request, 'dairy/index.html')
+
 @login_required(login_url='login')
 def dashboard(request):
     dairy = Dairy.objects.all()
-
     return render(request, 'dairy/dashboard.html', {'dairy':dairy})
+
 @login_required(login_url='login')
-def add(requst):
-    if requst.method == 'POST':
-        ad = Add_Dairy(requst.POST)
+def add(request):
+    if request.method == 'POST':
+        ad = Add_Dairy(request.POST)
         if ad.is_valid():
-            title=ad.cleaned_data['title']
-            description=ad.cleaned_data['description']
+            ad.title=ad.cleaned_data['title']
+            ad.description=ad.cleaned_data['description']
+            ad.user= request.user
             ad.save()
             return HttpResponseRedirect('/dairy/dashboard/')
     ad=Add_Dairy()
-    return render(requst, 'dairy/add.html', {'form': ad})
+    return render(request, 'dairy/add.html', {'form': ad})
 
 @login_required(login_url='login')
 def delete(request,id):
