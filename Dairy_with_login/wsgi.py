@@ -1,5 +1,5 @@
 """
-WSGI config for MyDairy_with_login project.
+WSGI config for Dairy_with_login project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyDairy_with_login.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Dairy_with_login.settings')
 
 application = get_wsgi_application()

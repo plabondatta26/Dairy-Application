@@ -1,3 +1,4 @@
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -8,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(7tw-8v579)o2ucy0si5voxgj@4kj@rv=ydp=4we6+_1an#9$='
+SECRET_KEY = '!#h(28fq*u*4o82=0$xg1m5^1hu9%ih_vz8!_h&0ko!4=2)8gf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'MyDairy_with_login.urls'
+ROOT_URLCONF = 'Dairy_with_login.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'MyDairy_with_login.wsgi.application'
+WSGI_APPLICATION = 'Dairy_with_login.wsgi.application'
 
 
 # Database

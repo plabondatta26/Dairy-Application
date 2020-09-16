@@ -1,5 +1,5 @@
 """
-ASGI config for MyDairy_with_login project.
+ASGI config for Dairy_with_login project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MyDairy_with_login.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Dairy_with_login.settings')
 
 application = get_asgi_application()

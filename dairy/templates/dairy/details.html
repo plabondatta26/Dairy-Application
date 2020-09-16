@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-
-{%load static%}
+ {%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>dashboard</title>
-       <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
+    <title>Dairy details</title>
+   <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
     <style>
-        .container{
-
+        .description{
+        margin-top: 100px;}
+        h1{display:inline}
+        .heading{ color: darkblue}
+        #pdf{
+        margin-top:50px;
+        position:relative;
+        float:right;
         }
     </style>
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,12 +28,12 @@
                     <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="">Dashboard</a>
+                    <a class="nav-link" href="{%url 'dashboard'%}">Dashboard</a>
                   </li>
 
                   <li class="nav-item">
                       {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'add' %}">Add New</a>
+                        <a class="nav-link" href="">Add New</a>
                       {% else%}
                          <a class="nav-link" href="{%url 'register'%}">Register</a>
                       {% endif%}
@@ -41,7 +46,7 @@
 
                     <li class="nav-item">
                           {% if user.is_authenticated %}
-                         <h4 class="btn btn-success">{{user.email}}</h4>
+                         <h4 class="btn btn-success">{{user.username}}</h4>
                             {% else%}
                         <a class="alert alert-warning" href="{%url 'login'%}">Log In</a>
                     </li>
@@ -51,44 +56,27 @@
               </li>
           </div>
     </nav>
-
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="text-center">
-                <h1>Dairy's </h1>
-
-                <table class="table table-hover">
-                    <thead>
-                        <th>Id</th>
-                        <th>USER</th>
-                        <th>Title</th>
-                        <th>Created on</th>
-                        <th>Details</th>
-                        <th>Action</th>
-                    </thead>
-                        <tbody>
-
-                        {%for d in dairy%}
-                            <tr>
-                                <td>{{d.id}}</td>
-                                <td>{{d.user}}</td>
-                                <td>{{d.title}}</td>
-                                <td>{{d.created_on}}</td>
-                                <td><a href="{%url 'details' d.id%}">Click Here</a></td>
-                                <td>
-                                    <a href="{%url 'edit' d.id%}" class="btn btn-warning">Edit</a>
-                                    <a href="{%url 'delete' d.id%}" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        {%endfor%}
-
-                        </tbody>
-                </table>
-            </div>
+<div class="container text-center">
+    <div class="form-group">
+        <div class="">
+            <h1 class="heading"> Title:</h1>
+             <h1>{{dairy.title}}</h1>
+        </div>
+        <div class="">
+            <h1 class="heading">Creation Date: </h1>
+            <h1> {{dairy.created_on}}</h1>
+        </div>
+        <div class="description">
+            <h1 class="heading">Description</h1><hr>
+            <p>{{dairy.description}}</p>
         </div>
     </div>
+    <div class="btn btn-primary" id="pdf">
+        <h4> Create pdf</h4>
+    </div>
+</div>
 
     <script src="{% static 'dairy/js/jquery.js' %"></script>
     <script src="{% static 'dairy/js/popper.js' %}"></script>

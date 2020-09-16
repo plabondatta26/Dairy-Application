@@ -1,8 +1,9 @@
 from django import forms
 from .models import Dairy
 
-class Add_Dairy(forms.ModelForm):
+class CreateNew(forms.ModelForm):
     class Meta:
-        model= Dairy
-        fields= ['id','title', 'description']
+        model = Dairy
+        fields=['title', 'description']
+
 
