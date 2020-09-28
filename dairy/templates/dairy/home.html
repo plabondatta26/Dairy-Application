@@ -76,9 +76,11 @@
 <div class="alert alert-info text-center">
     <h1>Welcome to Dairy application.</h1>
 </div>
+{% if user.is_authenticated%}
 <div class="welcome">
     <h3>&#128151; Welcome Back <b class="welcome_user">{{user.username}} &#128525;</b></h3>
 </div>
+{%endif%}
 <div class="container">
         <div class="row">
             <div class="alert alert-info col-md-3 " id="colum">

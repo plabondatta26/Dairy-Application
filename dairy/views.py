@@ -12,7 +12,7 @@ def index(request):
 @login_required(login_url='login')
 def dashboard(request):
    if request.user.is_authenticated:
-       dairy=Dairy.objects.filter(user= request.user)
+       dairy=Dairy.objects.filter(user= request.user).order_by('-created_on')
        if dairy is not None:
            return render(request, 'dairy/dashboard.html', {'dairy': dairy})
        else:
