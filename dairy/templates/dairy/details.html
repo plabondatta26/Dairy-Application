@@ -76,8 +76,8 @@
             <p>{{dairy.description}}</p>
         </div>
     </div>
-    <div class="btn btn-primary" id="pdf">
-        <h4> Create pdf</h4>
+    <div  id="pdf">
+        <a href="{% url 'pdf' dairy.id %}" class="btn btn-primary"> Create pdf</a>
     </div>
 </div>
 

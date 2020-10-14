@@ -15,4 +15,6 @@ urlpatterns = [
     path('details/<int:id>/', dairy.Details, name ='details'),
     path('edit/<int:id>/', dairy.Edit, name ='edit'),
     path('delete/<int:id>/', dairy.Delete, name ='delete'),
+    path('pdf/<int:id>/', dairy.pdfGenerator, name ='pdf'),
+    path('make/<int:id>/', dairy.pdfView, name ='pdfView'),
 ]

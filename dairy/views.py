@@ -4,6 +4,9 @@ from .forms import CreateNew
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from xhtml2pdf import pisa
+from django.template.loader import get_template
+from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return render(request, 'dairy/home.html')
@@ -33,40 +36,27 @@ def Add_new(request):
     fm = CreateNew()
     return render(request, 'dairy/add.html', {'fm':fm})
 
-"""
-user_id = request.user.id
-        user = get_object_or_404(User, pk=user_id)
-        fm = CreateNew(request.POST, instance=user)
-        if fm.is_valid():
-            print('before save')
-            fm.save()
-            print('after save')
-            return redirect('dashboard')
-        else:
-            return redirect('add')
-    fm = CreateNew()
-    return render(request, 'dairy/add.html', {'fm': fm})
 
-"""
-"""
-def Add_new(request):
+def pdfView(request,id):
+    data = Dairy.objects.get(pk=id)
+    return render(request,'dairy/pdf.html',{'dairy':data})
 
-    if request.method =='POST':
-        user = User(request.user.id)
-        print(user,'user id')
-        fm = CreateNew(request.POST, instance=request.user)
-        print(request.user.id)
-        if fm.is_valid():
-            print('before save')
-            fm.save(commit=True)
-            print('after save')
-            return redirect('dashboard')
-        else:
-            return redirect('add')
-    fm= CreateNew()
-    return render(request, 'dairy/add.html', {'fm':fm})
-
-"""
+def pdfGenerator(request, id):
+    data= Dairy.objects.get(pk=id)
+    context = {'dairy': data}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="dairy.pdf"'
+    # find the template and render it.
+    template = get_template('dairy/pdf.html')
+    html = template.render(context)
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+        html, dest=response)#, link_callback=link_callback)
+    # if error then show some funy view
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
 
 @login_required(login_url='login')
 def Details(request,id):
