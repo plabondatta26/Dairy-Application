@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>register</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'dairy/images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
+
     <style>
         .form-group, .form-control{
             color:black}
@@ -18,8 +20,8 @@
     </style>
 
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#" >Dairy</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/" >Dairy</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -45,17 +47,17 @@
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-
-                    <li class="nav-item" style="list-style:none">
-                          {% if user.is_authenticated %}
-                         <a class="alert alert-warning">{{user.email}}</a>
-                            {% else%}
-                        <a class="alert alert-warning" href="{%url 'login'%}">Log In</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item" style="list-style:none">
+                             <a class="alert alert-warning">{{user.email}}</a>
+                             <a class="alert alert-danger disabled" href="{% url 'logout'%}">Log Out</a>
+                        </li>
+                    {% else%}
+                        <li class="nav-item" style="list-style:none">
+                            <a class="alert alert-warning" href="{%url 'login'%}">Log In</a>
+                        </li>
                     {% endif %}
-              <li class="nav-item" style="list-style:none">
-                <a class="alert alert-danger disabled" href="{% url 'logout'%}">Log Out</a>
-              </li>
+
           </div>
     </nav>
 

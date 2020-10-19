@@ -5,17 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <title>dashboard</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'dairy/images/favicon.ico' %}">
        <link rel="stylesheet" href="{% static 'dairy/css/bootstrap.min.css' %}">
     <style>
-        .container{
 
-        }
         li{margin:2px;
         padding:5px;
-        font-weight:bold}
+        font-weight:bold;}
+        #table{
+        width: 90%;}
     </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#" >Dairy</a>
+        <a class="navbar-brand" href="/" >Dairy</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -58,12 +59,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="text-center">
-                <h1>Dairy's </h1>
+            <div id="table" class="text-center">
+                <h1 class="alert alert-info">Dairy's </h1>
 
                 <table class="table table-hover">
                     <thead>
-
                         <th>Title</th>
                         <th>Created on</th>
                         <th>Details</th>

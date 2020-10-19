@@ -8,6 +8,8 @@ from xhtml2pdf import pisa
 from django.template.loader import get_template
 from django.http import HttpResponse
 # Create your views here.
+
+
 def index(request):
     return render(request, 'dairy/home.html')
 
@@ -20,6 +22,7 @@ def dashboard(request):
            return render(request, 'dairy/dashboard.html', {'dairy': dairy})
        else:
            return render(request, 'dairy/dashboard.html')
+
 
 @login_required(login_url='login')
 def Add_new(request):
@@ -37,10 +40,13 @@ def Add_new(request):
     return render(request, 'dairy/add.html', {'fm':fm})
 
 
+@login_required(login_url='login')
 def pdfView(request,id):
     data = Dairy.objects.get(pk=id)
-    return render(request,'dairy/pdf.html',{'dairy':data})
+    return render(request,'dairy/pdf.html', {'dairy': data})
 
+
+@login_required(login_url='login')
 def pdfGenerator(request, id):
     data= Dairy.objects.get(pk=id)
     context = {'dairy': data}
@@ -58,6 +64,7 @@ def pdfGenerator(request, id):
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
 
+
 @login_required(login_url='login')
 def Details(request,id):
     if request.user.is_authenticated:
@@ -65,6 +72,7 @@ def Details(request,id):
         return render(request, 'dairy/details.html', {'dairy': dairy})
     else:
         return redirect('login')
+
 
 @login_required(login_url='login')
 def Edit(request, id):
@@ -76,6 +84,8 @@ def Edit(request, id):
             return redirect('dashboard')
     fm = CreateNew()
     return render(request, 'dairy/edit.html', {'fm':fm, 'dairy':dairy})
+
+
 @login_required(login_url='login')
 def Delete(request,id):
     print(id, 'id')
